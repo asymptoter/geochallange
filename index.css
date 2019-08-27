@@ -1,0 +1,23 @@
+body {
+  width: 33%;
+}
+
+.resBlock {
+    height: 48px;
+    font-size: 20px;
+    border: solid;
+    background-color: lightgray;
+}
+
+.buttonContainer {
+}
+
+.buttonContainer > .buttonClass {
+    width: 25%;
+    height: 36px;
+    font-size: 18px;
+    margin: 0px;
+    float: left;
+	background-color:lightgrey;
+    color: brown;
+}
