@@ -240,20 +240,25 @@ list =["Aaland Islands                                  ",
 "Zimbabwe                                        "] 
 
 var lastCountry = "";
-var optionSet = new Set();
 var usedCountry = new Set();
+var answerIndex = 0;
+var score = 0;
+
+function randomInt(min, max) {
+    return Math.floor(Math.random()*(max+1))+min;
+}
 
 function randomCountry() {
-    let country = list[Math.floor(Math.random()*239)];
+    let country = list[randomInt(0, 239)];
     if (usedCountry.has(country)) {
-        country = list[Math.floor(Math.random()*239)]; 
+        country = list[randomInt(0, 239)]; 
     }
     usedCountry.add(country)
     return country;
 }
 
 function randomOption() {
-    return list[Math.floor(Math.random()*239)]; 
+    return list[randomInt(0, 239)]; 
 }
 
 function shuffle(array) {
@@ -263,24 +268,42 @@ function shuffle(array) {
   }
 }
 
+function start() {
+    document.getElementById("start").style.display = "none";
+    document.getElementById("game").style.display = "";
+}
+
 function answer(ans) {
+    // Scoring
+    if (ans == answerIndex) {
+        score = score + 1;
+        document.getElementById("score").innerHTML = score;
+    }
+
+    // Clear flag
     if (lastCountry.length > 0) {
         document.getElementById(lastCountry).style.display = "none";
     }
 
+    // Generate quiz
     let quizCountry = randomCountry();
     document.getElementById("quiz").innerHTML = quizCountry;
     document.getElementById(quizCountry).style.display = "";
     lastCountry = quizCountry;
 
-    optionSet.clear();
+    // Generate options
+    let optionSet = new Set();
     optionSet.add(quizCountry);
     while(optionSet.size < 4) {
        optionSet.add(randomOption()); 
     }
     let optionArray = [...optionSet];
-    shuffle(optionArray);
+    answerIndex = randomInt(0, 3); 
+    [optionArray[0], optionArray[answerIndex]] = [optionArray[answerIndex], optionArray[0]];
     for (let i = 0; i < 4; i++) {
         document.getElementById("opt"+String(i)).innerHTML = optionArray[i];
     }
+
+    // Debug message
+    document.getElementById("debug").innerHTML = nextAnswer
 }
