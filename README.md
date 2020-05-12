@@ -1,1 +1,1 @@
-Home page https://asymptoter.github.io/geochallenge/index.html
+Home page https://asymptoter.github.io/website/index.html
