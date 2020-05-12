@@ -1,0 +1,103 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+}
+
+ul li {
+    list-style: none;
+    // display: inline;
+    // float: left;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    font-family: arial;
+    color: #1e1e1e;
+    float: left;
+    //margin: 10px;
+}
+
+.vl {
+    border-left: 1px solid black;
+    height: 100%;
+    position: absolute;
+    left: 13%;
+    top: 0;
+    //width: 1%;
+}
+
+.buttonContainer {}
+
+.buttonContainer>.buttonClass {
+    width: 50%;
+    height: 36px;
+    font-size: 18px;
+    margin: 1px;
+    float: left;
+    background-color: lightgrey;
+    color: brown;
+}
+
+.buttonContainer>.authButtonClass {
+    width: 10%;
+    height: 36px;
+    font-size: 18px;
+    margin: 1px;
+    float: right;
+    //background-color: lightgrey;
+    color: black;
+}
+
+.imageContainer {}
+
+.imageContainer>.imageClass {
+    width: 50%;
+    height: 35%;
+    margin: 1px;
+    left: 10%;
+}
+
+:root {
+    --left-pane-width: 14.91%;
+    --left-pane-border-width: 1px;
+    --right-pane-width: calc(100% - var(--left-pane-width) - var(--left-pane-border-width));
+}
+
+.leftpane {
+    width: var(--left-pane-width);
+    height: 100%;
+    float: left;
+    //background-color: rosybrown;
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 1.0;
+    border-right: var(--left-pane-border-width) solid black;
+}
+
+.rightpane {
+    width: var(--right-pane-width);
+    height: 100%;
+    position: relative;
+    float: right;
+  //background-color: yellow;
+    border-collapse: collapse;
+}
+
+.toppane {
+    float: right;
+    width: var(--right-pane-width);
+    height: 100px;
+    border-collapse: collapse;
+  //background-color: #4da6ff;
+    border-bottom: 1px solid black;
+}

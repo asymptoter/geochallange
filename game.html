@@ -4,40 +4,52 @@
 <head>
     <meta charset="utf-8" />
     <title> Geochallenge</title>
-    <link rel="stylesheet" href="index.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
 <body>
-    <div id="gameContent">
-        <div id="start" style="display">
-            <div id="btns" class="buttonContainer">
-                <button id="start" class="buttonClass" onclick="start()">Press to start</button>
+    <div class="container"> 
+        <div class="leftpane">
+            <ul>
+                <li><a href="index.html">Home</a></li><br></br>
+                <li><a href="about_me.html">About me</a></li><br></br>
+                <li><a href="trivial.html">Trivia</a></li><br></br>
+                <li><a href="game.html">Geo-Challenge</a></li><br></br>
+            </ul>
+        </div>
+<div class="toppane">
+    <div id="authBottons" class="buttonContainer"> 
+            <button id="signupButton" class="authButtonClass" onclick="location.href='signup.html'">Sign up</button>
+            <button id="loginButton" class="authButtonClass" onclick="login()">Login</button>
+        </div></div>
+        <div class="rightpane">
+            <div id="start" style="display">
+                <div id="btns" class="buttonContainer">
+                    <button class="buttonClass" onclick="start()">Press to start</button>
+                </div>
+            </div>
+            <div id="result" style="display:none">
+                <div id="resultScore"></div>
+                <div class="buttonContainer">
+                    <button id="retry" class="buttonClass" onclick="start()">Retry</button>
+                </div>
+            </div>
+            <div id="game" style="display:none">
+                <div id="countDown"> </div>
+                <div id="gameScore">Score: 0</div>
+                <div id="debug"></div>
+                <div class="buttonContainer">
+                    <button id="opt0" class="buttonClass" onclick="answer(0)"> 1 </button>
+                    <button id="opt1" class="buttonClass" onclick="answer(1)"> 2 </button>
+                    <button id="opt2" class="buttonClass" onclick="answer(2)"> 3 </button>
+                    <button id="opt3" class="buttonClass" onclick="answer(3)"> 4 </button>
+                </div>
+                <div id="quizImage" class="imageContainer">
+                    <img id="flag" class="imageClass" src="." alt="Flag" style="display" />
+                </div>
+                <script src="game.js"></script>
             </div>
         </div>
-        <div id="result" style="display:none">
-            <div id="resultScore"></div>
-            <div id="btns" class="buttonContainer">
-                <button id="retry" class="buttonClass" onclick="start()">Retry</button>
-            </div>
-        </div>
-        <div id="game" style="display:none">
-            <div id="countDown"> </div>
-            <div id="gameScore">Score: 0</div>
-            <div id="debug">debugMessage</div>
-            <div id="btns" class="buttonContainer">
-                <button id="opt0" class="buttonClass" onclick="answer(0)"> 1 </button>
-                <button id="opt1" class="buttonClass" onclick="answer(1)"> 2 </button>
-                <button id="opt2" class="buttonClass" onclick="answer(2)"> 3 </button>
-                <button id="opt3" class="buttonClass" onclick="answer(3)"> 4 </button>
-            </div>
-            <div id="quiz"> x </div>
-            <img id="flag" src="" width=100% style="display" />
-            <script src="index.js"></script>
-        </div>
-    </div>
-    <div id="knowledgeContent">
-        xd
     </div>
 </body>
-
 </html>
